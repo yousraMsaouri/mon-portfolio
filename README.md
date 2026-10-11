@@ -2,7 +2,7 @@
 
 Bienvenue sur le dépôt de mon portfolio personnel ! Ce projet met en valeur mon parcours, mes compétences et mes réalisations en tant qu'**Ingénieure d'État en Génie Informatique, spécialisée en Data Science et Intelligence Artificielle**.
 
-🔗 **Lien du site en direct :** mon-portfolio-dz6q2qlcb-yousramsaouri13-1730s-projects.vercel.app *(Remplacez par votre lien Vercel)*
+🔗 **Lien du site en direct :** 🔗 **Lien du site en direct :** [https://mon-portfolio-pbwa8kgh4-yousramsaouri13-1730s-projects.vercel.app](https://mon-portfolio-pbwa8kgh4-yousramsaouri13-1730s-projects.vercel.app)
 
 ---
 
@@ -28,3 +28,21 @@ mon-portfolio/
 │   ├── App.css         # Styles globaux et animations
 │   ├── main.jsx        # Point d'entrée React
 └── package.json        # Dépendances du projet
+```
+## 🌟 Fonctionnalités Clés
+
+* **Design Immersif & Thème Sombre/Clair** : Interface élégante aux accents rose/magenta/violet, avec intégration d'éléments géométriques 3D wireframe.
+
+* **Bandeau de Compétences Dynamique** : Défilement fluide des technologies et outils maîtrisés.
+
+# Sections Interactives :
+
+**À propos** : Présentation de mon profil et de mes expertises.
+
+**Projets** : Vitrine de mes réalisations (Générateur de documents RAG, Pipelines DevOps, Tableaux de bord de prédiction, etc.).
+
+**Expériences Professionnelles** : Timeline interactive de mes stages PFE/PFA et expériences en entreprise (Jacob Delafon, Smart Automation Technologie, etc.).
+
+**Formations & Éducation** : Mon parcours académique (ENSI Tanger, FST Tanger).
+
+**Formulaire de Contact** : Intégration fonctionnelle pour l'envoi de messages directs.
