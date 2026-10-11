@@ -426,7 +426,11 @@ export default function App() {
                 <span className="absolute inset-0 rounded-2xl border border-blue-500/30 group-hover:border-transparent transition-colors duration-300" />
 
                 {/* Contenu interne ajusté (px-8 py-3.5 et rounded-2xl) */}
-                <span className="relative z-10 inline-flex items-center gap-2.5 rounded-[14px] bg-[#0a0f1d] group-hover:bg-[#131b2e] px-8 py-3.5 text-base font-semibold text-white transition-colors duration-300 shadow-lg">
+                <span className={`relative z-10 inline-flex items-center gap-2.5 rounded-[14px] px-8 py-3.5 text-base font-semibold transition-colors duration-300 shadow-lg ${
+                  darkMode
+                    ? 'bg-[#0a0f1d] text-white group-hover:bg-[#131b2e]'
+                    : 'bg-white text-slate-800 group-hover:bg-slate-50'
+                }`}>
                   <Download size={20} className="transition-transform duration-300 group-hover:translate-y-0.5 text-cyan-400 group-hover:text-pink-400" />
                   <span>Télécharger CV</span>
                 </span>
@@ -632,7 +636,7 @@ export default function App() {
     <p className={`mb-4 uppercase tracking-[0.25em] text-[0.72rem] font-semibold ${accentText}`}>
       PARCOURS PROFESSIONNEL
     </p>
-    <h2 className="text-4xl md:text-6xl font-bold leading-none tracking-tight text-white">
+    <h2 className={`text-4xl md:text-6xl font-bold leading-none tracking-tight ${darkMode ? 'text-white' : 'text-slate-800'}`}>
       Expérience qui <span className={`italic font-light ${accentText}`}>parle d'elle-même.</span>
     </h2>
     <p className={`mt-5 max-w-3xl text-lg ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>
@@ -651,11 +655,15 @@ export default function App() {
         return (
           <div key={idx} className={`relative flex ${isLeft ? 'lg:justify-start' : 'lg:justify-end'}`}>
             {/* Puce sur la timeline */}
-            <span className="absolute left-1/2 top-10 hidden h-4 w-4 -translate-x-1/2 rounded-full border-2 border-pink-500 bg-[#0d1726] transition-all duration-300 lg:block"></span>
+            <span className={`absolute left-1/2 top-10 hidden h-4 w-4 -translate-x-1/2 rounded-full border-2 border-pink-500 transition-all duration-300 lg:block ${darkMode ? 'bg-[#0d1726]' : 'bg-white'}`}></span>
 
             <div className={`w-full lg:w-[48%] ${isLeft ? 'lg:pr-10' : 'lg:pl-10'}`}>
               {/* CADRE EXPÉRIENCE - SHADOW UNIQUEMENT EN INSET (INTÉRIEUR) */}
-              <div className="group relative rounded-[1.6rem] border border-white/10 bg-[#0b1322] p-6 md:p-7 transition-all duration-300 hover:-translate-y-1 hover:border-pink-500/80 hover:shadow-[inset_0_0_20px_rgba(255,255,255,0.12)]">
+              <div className={`group relative rounded-[1.6rem] border p-6 md:p-7 transition-all duration-300 hover:-translate-y-1 hover:border-pink-500/80 ${
+                darkMode
+                  ? 'border-white/10 bg-[#0b1322] hover:shadow-[inset_0_0_20px_rgba(255,255,255,0.12)]'
+                  : 'border-slate-200 bg-white shadow-md shadow-slate-200/60 hover:shadow-[inset_0_0_20px_rgba(148,163,184,0.12)]'
+              }`}>
                 
                 {/* Date alignée à droite */}
                 <div className="mb-2 flex justify-end">
@@ -666,10 +674,12 @@ export default function App() {
 
                 {/* Titre & Entreprise */}
                 <div className="mb-4">
-                  <h3 className="text-2xl md:text-3xl font-bold leading-tight text-white transition-colors duration-300 group-hover:text-pink-50">
+                  <h3 className={`text-2xl md:text-3xl font-bold leading-tight transition-colors duration-300 ${
+                    darkMode ? 'text-white group-hover:text-pink-50' : 'text-slate-800 group-hover:text-pink-700'
+                  }`}>
                     {exp.title}
                   </h3>
-                  <p className="mt-1 text-base font-medium text-slate-400">{exp.company}</p>
+                  <p className={`mt-1 text-base font-medium ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>{exp.company}</p>
                 </div>
 
                 {/* Description */}
@@ -685,7 +695,11 @@ export default function App() {
                       return (
                         <span
                           key={tIdx}
-                          className="rounded-full border border-white/10 bg-[#111c30] px-3 py-1 text-[11px] font-medium text-slate-300 transition-colors duration-300 group-hover:border-pink-500/30 group-hover:bg-[#16223a]"
+                          className={`rounded-full border px-3 py-1 text-[11px] font-medium transition-colors duration-300 group-hover:border-pink-500/30 ${
+                            darkMode
+                              ? 'border-white/10 bg-[#111c30] text-slate-300 group-hover:bg-[#16223a]'
+                              : 'border-slate-200 bg-slate-50 text-slate-600 group-hover:bg-pink-50'
+                          }`}
                         >
                           {tag.length > 15 ? tag.slice(0, 15) + '...' : tag}
                         </span>
@@ -725,7 +739,7 @@ export default function App() {
                 <p className={`uppercase tracking-[0.25em] text-[0.72rem] font-semibold mb-4 ${accentText}`}>
                   ACADEMIC BACKGROUND
                 </p>
-                <h2 className="text-5xl md:text-6xl font-bold leading-none tracking-tight text-white">
+                <h2 className={`text-5xl md:text-6xl font-bold leading-none tracking-tight ${darkMode ? 'text-white' : 'text-slate-800'}`}>
                   Education <span className={`italic font-light ${accentText}`}>& languages.</span>
                 </h2>
               </div>
@@ -736,20 +750,24 @@ export default function App() {
                   return (
                     <div
                       key={idx}
-                      className="group rounded-[1.7rem] border border-white/10 bg-[#0d1726]/90 p-7 shadow-[0_0_0_1px_rgba(255,255,255,0.03)] transition-all duration-300 ease-out hover:-translate-y-2 hover:border-fuchsia-400/40 hover:bg-gradient-to-br hover:from-[#0c1a2e] hover:via-[#1a1535] hover:to-[#2a1233] hover:shadow-[0_18px_40px_rgba(168,85,247,0.2)]"
+                      className={`group rounded-[1.7rem] border p-7 transition-all duration-300 ease-out hover:-translate-y-2 hover:border-fuchsia-400/40 ${
+                        darkMode
+                          ? 'border-white/10 bg-[#0d1726]/90 shadow-[0_0_0_1px_rgba(255,255,255,0.03)] hover:bg-gradient-to-br hover:from-[#0c1a2e] hover:via-[#1a1535] hover:to-[#2a1233] hover:shadow-[0_18px_40px_rgba(168,85,247,0.2)]'
+                          : 'border-slate-200 bg-white shadow-md shadow-slate-200/60 hover:bg-gradient-to-br hover:from-white hover:via-violet-50 hover:to-pink-50 hover:shadow-[0_18px_40px_rgba(168,85,247,0.12)]'
+                      }`}
                     >
                       <div className="mb-8 flex items-center justify-between">
-                        <div className="flex h-12 w-12 items-center justify-center rounded-full border border-violet-400/50 bg-[#0f1a2d] text-fuchsia-300 transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-sky-400 group-hover:via-violet-400 group-hover:to-pink-400 group-hover:text-white group-hover:border-pink-300/80">
+                        <div className={`flex h-12 w-12 items-center justify-center rounded-full border border-violet-400/50 text-fuchsia-300 transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-sky-400 group-hover:via-violet-400 group-hover:to-pink-400 group-hover:text-white group-hover:border-pink-300/80 ${darkMode ? 'bg-[#0f1a2d]' : 'bg-violet-50'}`}>
                           <Icon size={22} />
                         </div>
                         <span className={`text-xl font-semibold ${accentText}`}>{edu.year}</span>
                       </div>
 
-                      <h3 className="text-[1.05rem] md:text-[1.2rem] font-semibold leading-snug text-white mb-5 max-w-[18ch] transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-sky-400 group-hover:via-violet-400 group-hover:to-pink-400 group-hover:bg-clip-text group-hover:text-transparent">
+                      <h3 className={`text-[1.05rem] md:text-[1.2rem] font-semibold leading-snug mb-5 max-w-[18ch] transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-sky-400 group-hover:via-violet-400 group-hover:to-pink-400 group-hover:bg-clip-text group-hover:text-transparent ${darkMode ? 'text-white' : 'text-slate-800'}`}>
                         {edu.degree}
                       </h3>
 
-                      <p className="text-[0.96rem] leading-relaxed text-slate-300 transition-colors duration-300 group-hover:text-slate-200">
+                      <p className={`text-[0.96rem] leading-relaxed transition-colors duration-300 ${darkMode ? 'text-slate-300 group-hover:text-slate-200' : 'text-slate-600 group-hover:text-slate-700'}`}>
                         {edu.school}
                       </p>
                     </div>
@@ -757,14 +775,18 @@ export default function App() {
                 })}
               </div>
 
-              <div className="group mt-12 mx-auto max-w-4xl rounded-[1.5rem] border border-white/10 bg-[#0d1726]/90 px-8 py-6 shadow-[0_0_0_1px_rgba(255,255,255,0.03)] transition-all duration-300 ease-out hover:-translate-y-1 hover:border-fuchsia-400/50 hover:bg-gradient-to-r hover:from-[#0c1a2e] hover:via-[#1a1535] hover:to-[#2a1233] hover:shadow-[0_18px_40px_rgba(168,85,247,0.16)]">
+              <div className={`group mt-12 mx-auto max-w-4xl rounded-[1.5rem] border px-8 py-6 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-fuchsia-400/50 ${
+                darkMode
+                  ? 'border-white/10 bg-[#0d1726]/90 shadow-[0_0_0_1px_rgba(255,255,255,0.03)] hover:bg-gradient-to-r hover:from-[#0c1a2e] hover:via-[#1a1535] hover:to-[#2a1233] hover:shadow-[0_18px_40px_rgba(168,85,247,0.16)]'
+                  : 'border-slate-200 bg-white shadow-md shadow-slate-200/60 hover:bg-gradient-to-r hover:from-white hover:via-violet-50 hover:to-pink-50 hover:shadow-[0_18px_40px_rgba(168,85,247,0.12)]'
+              }`}>
                 <div className="flex flex-col items-center justify-center gap-3 text-center md:flex-row md:gap-5">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full border border-violet-400/50 bg-[#0f1a2d] text-fuchsia-300 transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-sky-400 group-hover:via-violet-400 group-hover:to-pink-400 group-hover:text-white group-hover:border-pink-300/80">
+                  <div className={`flex h-12 w-12 items-center justify-center rounded-full border border-violet-400/50 text-fuchsia-300 transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-sky-400 group-hover:via-violet-400 group-hover:to-pink-400 group-hover:text-white group-hover:border-pink-300/80 ${darkMode ? 'bg-[#0f1a2d]' : 'bg-violet-50'}`}>
                     <Award size={20} />
                   </div>
                   <div>
-                    <h3 className="text-3xl font-bold text-white transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-sky-400 group-hover:via-violet-400 group-hover:to-pink-400 group-hover:bg-clip-text group-hover:text-transparent">Languages</h3>
-                    <p className="text-lg text-slate-300 transition-colors duration-300 group-hover:text-slate-100">Arabe • Français • Anglais</p>
+                    <h3 className={`text-3xl font-bold transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-sky-400 group-hover:via-violet-400 group-hover:to-pink-400 group-hover:bg-clip-text group-hover:text-transparent ${darkMode ? 'text-white' : 'text-slate-800'}`}>Languages</h3>
+                    <p className={`text-lg transition-colors duration-300 ${darkMode ? 'text-slate-300 group-hover:text-slate-100' : 'text-slate-600 group-hover:text-slate-700'}`}>Arabe • Français • Anglais</p>
                   </div>
                 </div>
               </div>
@@ -774,7 +796,7 @@ export default function App() {
           {/* Formulaire de Contact */}
           <section id="contact" className="scroll-mt-28 pt-8 w-full">
             <div className="mb-10">
-              <h2 className="text-4xl md:text-6xl font-bold leading-none tracking-tight text-white">
+              <h2 className={`text-4xl md:text-6xl font-bold leading-none tracking-tight ${darkMode ? 'text-white' : 'text-slate-800'}`}>
                 Contactez <span className={`italic font-light ${accentText}`}>moi</span>
               </h2>
               <p className={`mt-5 max-w-3xl text-lg ${darkMode ? 'text-slate-400' : 'text-slate-600'}`}>
