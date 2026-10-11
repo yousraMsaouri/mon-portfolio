@@ -1,16 +1,30 @@
-# React + Vite
+# 🚀 Portfolio Professionnel — Data Science, Big Data & IA
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bienvenue sur le dépôt de mon portfolio personnel ! Ce projet met en valeur mon parcours, mes compétences et mes réalisations en tant qu'**Ingénieure d'État en Génie Informatique, spécialisée en Data Science et Intelligence Artificielle**.
 
-Currently, two official plugins are available:
+🔗 **Lien du site en direct :** mon-portfolio-dz6q2qlcb-yousramsaouri13-1730s-projects.vercel.app *(Remplacez par votre lien Vercel)*
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🛠️ Stack Technologique & Outils
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Le portfolio a été conçu avec des technologies modernes pour offrir une expérience utilisateur fluide et un design épuré (thème sombre, accents rose/violet, animations 3D) :
 
-## Expanding the ESLint configuration
+* **Frontend** : React.js, Vite, Tailwind CSS
+* **Animations & 3D** : Three.js (`@react-three/fiber`, `@react-three/drei`), Lucide React
+* **IA & Data** : Python, Machine Learning, LLM, RAG Pipelines, FastAPI, Power BI, Scikit-Learn
+* **Déploiement** : Vercel
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📂 Structure du Projet
+
+```text
+mon-portfolio/
+├── public/             # Fichiers statiques (CV, images)
+├── src/
+│   ├── assets/         # Ressources graphiques
+│   ├── App.jsx         # Composant principal (sections & structure)
+│   ├── App.css         # Styles globaux et animations
+│   ├── main.jsx        # Point d'entrée React
+└── package.json        # Dépendances du projet
