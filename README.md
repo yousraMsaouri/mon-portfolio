@@ -35,7 +35,7 @@ mon-portfolio/
 
 * **Bandeau de Compétences Dynamique** : Défilement fluide des technologies et outils maîtrisés.
 
-# Sections Interactives :
+* **Sections Interactives :**
 
 **À propos** : Présentation de mon profil et de mes expertises.
 
@@ -46,3 +46,10 @@ mon-portfolio/
 **Formations & Éducation** : Mon parcours académique (ENSI Tanger, FST Tanger).
 
 **Formulaire de Contact** : Intégration fonctionnelle pour l'envoi de messages directs.
+
+## 📬 Contact & Réseaux
+LinkedIn : Yousra Msaouri
+
+Email : yousramsaouri13@gmail.com
+
+© 2026 Yousra Msaouri Charroud. Tous droits réservés.
