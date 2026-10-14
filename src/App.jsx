@@ -295,8 +295,8 @@ export default function App() {
 
   const handleDownloadCV = () => {
     const link = document.createElement('a');
-    link.href = '/cvYousra.pdf';
-    link.download = 'cvYousra.pdf';
+    link.href = '/cv_Yousra_Msaouri_Charroud.pdf';
+    link.download = 'cv_Yousra_Msaouri_Charroud.pdf';
     link.target = '_blank';
     document.body.appendChild(link);
     link.click();
